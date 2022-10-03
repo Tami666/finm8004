@@ -1,7 +1,7 @@
 /////DATA FILES REQUIRED TO RUN THE DO FILE////
 *[1] raw_sample_90_10 /// all firms listed in Compustat from 1990 to 2010, with no null values for AT, DVC PRCC_F, CSHO
 *[2] cstat_initial_sample_89_10 /// using the GVKEY distinct file, rerun initial sample search for from FY1989 to obtain prior years' data for lagged calcs.
-*[3] crsp_dividends_89_10 /// sample of firms' dividend data from CRSP-Compustat merged database from 1989 to 2010. Use distinct GVKEY file to obtain data
+*[3] crsp_dividends_89_10 /// sample of firms' dividend data from CRSP-Compustat merged database from 1989 to 2010. Use distinct GVKEY file to obtain      
 *[4] compustat_firstdate_all /// cleaned list of all firms on Compustat to 2010 with the date they first appeared in the database for "firm age" calculations
 ***** need to change the file directory to your own local drive, currently set to C:\Users\X1 Nat\OneDrive - Australian National University\Desktop\ANU\Semester 2 - 2022\FINM8004 - Advanced Corporate Finance\Assignments\Replication Project\Data\Audit\******
 
@@ -156,7 +156,7 @@ gen poredd = cond(totpay - L.totpay<0, 1, 0)
 gen payred = cond(L.poredd==1, 1, 0)
 
 ***(R&D+CapEx)/TA***
-gen randcapexta = (xrd+capx)/at
+gen randcapexta = (xrd+capx)/at   
 
 ***Tobin's Q***
 gen mktva = (at + (csho*prcc_f) - ceq - txdb)
